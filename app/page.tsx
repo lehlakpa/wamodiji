@@ -65,13 +65,13 @@ export default function Portfolio() {
   return (
     <main className="min-h-screen bg-[#0d0d0d] text-white font-sans flex justify-center py-10 px-5 relative overflow-hidden">
       {/* Background Decorators */}
-      <div className="absolute -top-[100px] -right-[100px] w-[400px] h-[400px] bg-[radial-gradient(circle,rgba(255,255,255,0.05)_0%,rgba(0,0,0,0)_70%)] rounded-full pointer-events-none" />
+      <div className="hidden md:block absolute -top-[100px] -right-[100px] w-[400px] h-[400px] bg-[radial-gradient(circle,rgba(255,255,255,0.05)_0%,rgba(0,0,0,0)_70%)] rounded-full pointer-events-none" />
       <div className="absolute top-5 left-5 w-[100px] h-[100px] bg-[radial-gradient(circle,#333_1px,transparent_1px)] bg-[size:15px_15px] opacity-50 pointer-events-none" />
       
-      <div className="max-w-[600px] w-full flex flex-col gap-5 z-10">
+      <div className="max-w-full sm:max-w-[600px] md:max-w-[700px] lg:max-w-[800px] w-full flex flex-col gap-5 z-10 transition-all duration-300">
         
         {/* Profile Card */}
-        <section className="bg-[#1a1a1a] border border-[#2a2a2a] rounded-2xl p-[30px] shadow-[0_10px_30px_rgba(0,0,0,0.5)]">
+        <section className="bg-[#1a1a1a] border border-[#2a2a2a] rounded-2xl p-5 sm:p-[30px] md:p-8 shadow-[0_10px_30px_rgba(0,0,0,0.5)]">
           <div className="flex flex-col gap-5">
             <div className="flex flex-col">
               <div className="flex justify-between items-start">
@@ -112,30 +112,30 @@ export default function Portfolio() {
         </section>
 
         {/* Info Cards Row */}
-        <div className="flex gap-5">
-          <div className="flex-1 bg-[#1a1a1a] border border-[#2a2a2a] rounded-2xl p-5 flex items-center gap-3.5">
-            <div className="w-[50px] h-[50px] rounded-xl bg-[#2a2a2a] flex items-center justify-center text-white">
-              <Calendar size={24} />
+        <div className="flex flex-col sm:flex-row gap-5">
+          <div className="flex-1 bg-[#1a1a1a] border border-[#2a2a2a] rounded-2xl p-5 md:p-6 flex items-center gap-3.5 md:gap-5 transition-all duration-300">
+            <div className="w-[50px] md:w-[60px] h-[50px] md:h-[60px] rounded-xl bg-[#2a2a2a] flex items-center justify-center text-white shrink-0">
+              <Calendar size={24} className="md:w-7 md:h-7" />
             </div>
             <div className="flex flex-col">
-              <span className="text-xs text-[#a0a0a0] mb-1">Date of Birth</span>
-              <span className="text-lg font-semibold">2061-01-13</span>
+              <span className="text-xs md:text-sm text-[#a0a0a0] mb-1">Date of Birth</span>
+              <span className="text-lg md:text-xl font-semibold">2061-01-13</span>
             </div>
           </div>
           
-          <div className="flex-1 bg-[#1a1a1a] border border-[#2a2a2a] rounded-2xl p-5 flex items-center gap-3.5">
-            <div className="w-[50px] h-[50px] rounded-xl bg-[#2a2a2a] flex items-center justify-center text-white">
-              <GraduationCap size={24} />
+          <div className="flex-1 bg-[#1a1a1a] border border-[#2a2a2a] rounded-2xl p-5 md:p-6 flex items-center gap-3.5 md:gap-5 transition-all duration-300">
+            <div className="w-[50px] md:w-[60px] h-[50px] md:h-[60px] rounded-xl bg-[#2a2a2a] flex items-center justify-center text-white shrink-0">
+              <GraduationCap size={24} className="md:w-7 md:h-7" />
             </div>
             <div className="flex flex-col">
-              <span className="text-xs text-[#a0a0a0] mb-1">Location</span>
-              <span className="text-lg font-semibold leading-tight">Okhaldhunga,<br />Nepal</span>
+              <span className="text-xs md:text-sm text-[#a0a0a0] mb-1">Location</span>
+              <span className="text-lg md:text-xl font-semibold leading-tight">Okhaldhunga,<br className="hidden sm:block" />Nepal</span>
             </div>
           </div>
         </div>
 
         {/* Qualification Card */}
-        <section className="bg-[#1a1a1a] border border-[#2a2a2a] rounded-2xl p-[30px] shadow-[0_10px_30px_rgba(0,0,0,0.5)]">
+        <section className="bg-[#1a1a1a] border border-[#2a2a2a] rounded-2xl p-5 sm:p-[30px] md:p-8 shadow-[0_10px_30px_rgba(0,0,0,0.5)] transition-all duration-300">
           <h2 className="text-base font-semibold tracking-wide flex items-center gap-3.5 mb-6">
             <div className="w-10 h-10 rounded-full border border-[#333] flex items-center justify-center"><GraduationCap size={20} /></div>
             QUALIFICATION
@@ -169,7 +169,7 @@ export default function Portfolio() {
         </section>
 
         {/* Skills Card */}
-        <section className="bg-[#1a1a1a] border border-[#2a2a2a] rounded-2xl p-[30px] shadow-[0_10px_30px_rgba(0,0,0,0.5)]">
+        <section className="bg-[#1a1a1a] border border-[#2a2a2a] rounded-2xl p-5 sm:p-[30px] md:p-8 shadow-[0_10px_30px_rgba(0,0,0,0.5)] transition-all duration-300">
           <h2 className="text-base font-semibold tracking-wide flex items-center gap-3.5 mb-6">
             <div className="w-10 h-10 rounded-full border border-[#333] flex items-center justify-center"><Code size={20} /></div>
             SKILLS
@@ -207,7 +207,7 @@ export default function Portfolio() {
         </section>
 
         {/* About Me Card */}
-        <section className="bg-[#1a1a1a] border border-[#2a2a2a] rounded-2xl p-[30px] shadow-[0_10px_30px_rgba(0,0,0,0.5)] relative overflow-hidden">
+        <section className="bg-[#1a1a1a] border border-[#2a2a2a] rounded-2xl p-5 sm:p-[30px] md:p-8 shadow-[0_10px_30px_rgba(0,0,0,0.5)] relative overflow-hidden transition-all duration-300">
           <h2 className="text-base font-semibold tracking-wide flex items-center gap-3.5 mb-6">
             <div className="w-10 h-10 rounded-full border border-[#333] flex items-center justify-center"><User size={20} /></div>
             ABOUT ME
