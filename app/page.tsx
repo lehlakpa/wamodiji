@@ -1,5 +1,4 @@
 import Image from 'next/image';
-import styles from './portfolio.module.css';
 import { 
   Globe, 
   MapPin, 
@@ -12,7 +11,6 @@ import {
   Building,
   Code,
   User,
-  Activity
 } from 'lucide-react';
 
 const GithubIcon = () => (
@@ -27,6 +25,12 @@ const LinkedinIcon = () => (
     <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
     <rect width="4" height="12" x="2" y="9"/>
     <circle cx="4" cy="4" r="2"/>
+  </svg>
+);
+
+const FacebookIcon = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
   </svg>
 );
 
@@ -59,164 +63,162 @@ const JavascriptIcon = () => (
 
 export default function Portfolio() {
   return (
-    <main className={styles.container}>
-      <div className={styles.backgroundGlow} />
-      <div className={styles.dottedPattern} />
+    <main className="min-h-screen bg-[#0d0d0d] text-white font-sans flex justify-center py-10 px-5 relative overflow-hidden">
+      {/* Background Decorators */}
+      <div className="absolute -top-[100px] -right-[100px] w-[400px] h-[400px] bg-[radial-gradient(circle,rgba(255,255,255,0.05)_0%,rgba(0,0,0,0)_70%)] rounded-full pointer-events-none" />
+      <div className="absolute top-5 left-5 w-[100px] h-[100px] bg-[radial-gradient(circle,#333_1px,transparent_1px)] bg-[size:15px_15px] opacity-50 pointer-events-none" />
       
-      <div className={styles.contentWrapper}>
+      <div className="max-w-[600px] w-full flex flex-col gap-5 z-10">
         
         {/* Profile Card */}
-        <section className={styles.card}>
-          <div className={styles.cardHeader}>
-            <div className={styles.profileSection}>
-              <div className={styles.profileInfo}>
-                <div className={styles.nameRow}>
-                  <h1 className={styles.name}>Lakpa Ngundu<br />Sherpa</h1>
-                  <button className={styles.portfolioBtn}>
-                    <User size={14} /> PORTFOLIO
-                  </button>
-                </div>
-                <div className={styles.roleRow}>
-                  <span className={styles.role}>Junior Flutter Developer</span>
-                  <div className={styles.socialIcons}>
-                    <a href="#" className={styles.socialIcon}><GithubIcon /></a>
-                    <a href="#" className={styles.socialIcon}><LinkedinIcon /></a>
-                    <a href="#" className={styles.socialIcon}><Globe size={18} /></a>
-                  </div>
+        <section className="bg-[#1a1a1a] border border-[#2a2a2a] rounded-2xl p-[30px] shadow-[0_10px_30px_rgba(0,0,0,0.5)]">
+          <div className="flex flex-col gap-5">
+            <div className="flex flex-col">
+              <div className="flex justify-between items-start">
+                <h1 className="text-[32px] font-bold leading-[1.2] m-0">Lakpa Ngundu<br />Sherpa</h1>
+                <button className="bg-transparent text-white border border-[#444] py-1.5 px-3 rounded-full text-xs font-semibold flex items-center gap-1.5 cursor-pointer transition-all duration-200 hover:bg-[#333]">
+                  <User size={14} /> PORTFOLIO
+                </button>
+              </div>
+              
+              <div className="flex justify-between items-center mt-2.5 border-b border-[#333] pb-[15px]">
+                <span className="text-[#a0a0a0] text-xs tracking-wider font-semibold uppercase">Junior Flutter Developer</span>
+                <div className="flex gap-3">
+                  <a href="https://github.com/lehlakpa" target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-full bg-[#2a2a2a] flex items-center justify-center text-white transition-colors duration-200 hover:bg-[#444]">
+                    <GithubIcon />
+                  </a>
+                  <a href="https://facebook.com/lakpa.ngundu.sherpa" target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-full bg-[#2a2a2a] flex items-center justify-center text-white transition-colors duration-200 hover:bg-[#444]">
+                    <FacebookIcon />
+                  </a>
+                  <a href="#" className="w-8 h-8 rounded-full bg-[#2a2a2a] flex items-center justify-center text-white transition-colors duration-200 hover:bg-[#444]">
+                    <LinkedinIcon />
+                  </a>
                 </div>
               </div>
             </div>
             
-            <div className={styles.contactInfo}>
-              <div className={styles.contactItem}>
+            <div className="flex justify-between mt-5 text-xs text-[#ccc]">
+              <div className="flex items-center gap-2">
                 <MapPin size={14} /> Okhaldhunga, Nepal
               </div>
-              <div className={styles.contactItem}>
-                <Mail size={14} /> lakpangundu@example.com
+              <div className="flex items-center gap-2">
+                <Mail size={14} /> lehLakpaa@gmail.com
               </div>
-              <div className={styles.contactItem}>
-                <Phone size={14} /> +977 9841234567
+              <div className="flex items-center gap-2">
+                <Phone size={14} /> +977 9709047193
               </div>
             </div>
           </div>
         </section>
 
         {/* Info Cards Row */}
-        <div className={styles.twoColumn}>
-          <div className={styles.miniCard}>
-            <div className={styles.iconBox}>
+        <div className="flex gap-5">
+          <div className="flex-1 bg-[#1a1a1a] border border-[#2a2a2a] rounded-2xl p-5 flex items-center gap-3.5">
+            <div className="w-[50px] h-[50px] rounded-xl bg-[#2a2a2a] flex items-center justify-center text-white">
               <Calendar size={24} />
             </div>
-            <div className={styles.miniCardContent}>
-              <span className={styles.miniCardLabel}>Date of Birth</span>
-              <span className={styles.miniCardValue}>2061-01-13</span>
+            <div className="flex flex-col">
+              <span className="text-xs text-[#a0a0a0] mb-1">Date of Birth</span>
+              <span className="text-lg font-semibold">2061-01-13</span>
             </div>
           </div>
           
-          <div className={styles.miniCard}>
-            <div className={styles.iconBox}>
+          <div className="flex-1 bg-[#1a1a1a] border border-[#2a2a2a] rounded-2xl p-5 flex items-center gap-3.5">
+            <div className="w-[50px] h-[50px] rounded-xl bg-[#2a2a2a] flex items-center justify-center text-white">
               <GraduationCap size={24} />
             </div>
-            <div className={styles.miniCardContent}>
-              <span className={styles.miniCardLabel}>Location</span>
-              <span className={styles.miniCardValue}>Okhaldhunga,<br />Nepal</span>
+            <div className="flex flex-col">
+              <span className="text-xs text-[#a0a0a0] mb-1">Location</span>
+              <span className="text-lg font-semibold leading-tight">Okhaldhunga,<br />Nepal</span>
             </div>
           </div>
         </div>
 
         {/* Qualification Card */}
-        <section className={styles.card}>
-          <h2 className={styles.sectionTitle}>
-            <div className={styles.titleIcon}><GraduationCap size={20} /></div>
+        <section className="bg-[#1a1a1a] border border-[#2a2a2a] rounded-2xl p-[30px] shadow-[0_10px_30px_rgba(0,0,0,0.5)]">
+          <h2 className="text-base font-semibold tracking-wide flex items-center gap-3.5 mb-6">
+            <div className="w-10 h-10 rounded-full border border-[#333] flex items-center justify-center"><GraduationCap size={20} /></div>
             QUALIFICATION
           </h2>
           
-          <div className={styles.timeline}>
-            <div className={styles.timelineItem}>
-              <div className={styles.timelineIcon}><CheckCircle size={20} /></div>
-              <div className={styles.timelineContent}>
-                <h4>+2 Completed</h4>
-                <p>Successfully completed Higher Secondary Education.</p>
+          <div className="flex flex-col relative before:content-[''] before:absolute before:left-5 before:top-0 before:bottom-0 before:w-px before:border-l before:border-dashed before:border-[#444]">
+            <div className="flex gap-5 mb-6 relative last:mb-0">
+              <div className="w-10 h-10 rounded-full bg-[#eee] text-[#111] flex items-center justify-center z-10 shrink-0"><CheckCircle size={20} /></div>
+              <div className="flex flex-col justify-center">
+                <h4 className="m-0 mb-1 text-[15px] font-semibold">+2 Completed</h4>
+                <p className="m-0 text-xs text-[#a0a0a0]">Successfully completed Higher Secondary Education.</p>
               </div>
             </div>
             
-            <div className={styles.timelineItem}>
-              <div className={styles.timelineIcon}><BookOpen size={20} /></div>
-              <div className={styles.timelineContent}>
-                <h4>Running Bachelor (2nd Semester)</h4>
-                <p>Currently pursuing Bachelor's Degree.</p>
+            <div className="flex gap-5 mb-6 relative last:mb-0">
+              <div className="w-10 h-10 rounded-full bg-[#eee] text-[#111] flex items-center justify-center z-10 shrink-0"><BookOpen size={20} /></div>
+              <div className="flex flex-col justify-center">
+                <h4 className="m-0 mb-1 text-[15px] font-semibold">Running Bachelor (2nd Semester)</h4>
+                <p className="m-0 text-xs text-[#a0a0a0]">Currently pursuing Bachelor's Degree.</p>
               </div>
             </div>
             
-            <div className={styles.timelineItem}>
-              <div className={styles.timelineIcon}><Building size={20} /></div>
-              <div className={styles.timelineContent}>
-                <h4>Texas International College</h4>
-                <p>Affiliated college for higher education.</p>
+            <div className="flex gap-5 mb-6 relative last:mb-0">
+              <div className="w-10 h-10 rounded-full bg-[#eee] text-[#111] flex items-center justify-center z-10 shrink-0"><Building size={20} /></div>
+              <div className="flex flex-col justify-center">
+                <h4 className="m-0 mb-1 text-[15px] font-semibold">Texas International College</h4>
+                <p className="m-0 text-xs text-[#a0a0a0]">Affiliated college for higher education.</p>
               </div>
             </div>
           </div>
         </section>
 
         {/* Skills Card */}
-        <section className={styles.card}>
-          <h2 className={styles.sectionTitle}>
-            <div className={styles.titleIcon}><Code size={20} /></div>
+        <section className="bg-[#1a1a1a] border border-[#2a2a2a] rounded-2xl p-[30px] shadow-[0_10px_30px_rgba(0,0,0,0.5)]">
+          <h2 className="text-base font-semibold tracking-wide flex items-center gap-3.5 mb-6">
+            <div className="w-10 h-10 rounded-full border border-[#333] flex items-center justify-center"><Code size={20} /></div>
             SKILLS
           </h2>
           
-          <div className={styles.skillsList}>
-            <div className={styles.skillItem}>
-              <div className={styles.skillIcon} style={{color: '#42a5f5'}}><FlutterIcon /></div>
-              <span className={styles.skillName}>Flutter</span>
-              <div className={styles.skillBarContainer}>
-                <div className={styles.skillBar} style={{width: '90%'}}></div>
+          <div className="flex flex-col">
+            <div className="flex items-center gap-3.5 mb-5 last:mb-0">
+              <div className="w-[30px] h-[30px] flex items-center justify-center text-[#42a5f5]"><FlutterIcon /></div>
+              <span className="w-[140px] text-sm font-medium">Junior Flutter Developer</span>
+              <div className="flex-grow h-1.5 bg-[#333] rounded-sm relative overflow-hidden">
+                <div className="absolute top-0 left-0 h-full bg-white rounded-sm w-[90%]"></div>
               </div>
-              <span className={styles.skillLevel}>Advanced</span>
+              <span className="w-20 text-right text-xs text-[#a0a0a0]">Mid</span>
             </div>
             
-            <div className={styles.skillItem}>
-              <div className={styles.skillIcon} style={{color: '#ffca28'}}><FirebaseIcon /></div>
-              <span className={styles.skillName}>Firebase</span>
-              <div className={styles.skillBarContainer}>
-                <div className={styles.skillBar} style={{width: '85%'}}></div>
+            <div className="flex items-center gap-3.5 mb-5 last:mb-0">
+              <div className="w-[30px] h-[30px] flex items-center justify-center text-[#ffca28]"><FirebaseIcon /></div>
+              <span className="w-[140px] text-sm font-medium">Firebase</span>
+              <div className="flex-grow h-1.5 bg-[#333] rounded-sm relative overflow-hidden">
+                <div className="absolute top-0 left-0 h-full bg-white rounded-sm w-[85%]"></div>
               </div>
-              <span className={styles.skillLevel}>Advanced</span>
+              <span className="w-20 text-right text-xs text-[#a0a0a0]">mid</span>
             </div>
             
-            <div className={styles.skillItem}>
-              <div className={styles.skillIcon} style={{color: '#aaa'}}><Code size={24} /></div>
-              <span className={styles.skillName}>Junior Development</span>
-              <div className={styles.skillBarContainer}>
-                <div className={styles.skillBar} style={{width: '60%'}}></div>
-              </div>
-              <span className={styles.skillLevel}>Intermediate</span>
-            </div>
             
-            <div className={styles.skillItem}>
-              <div className={styles.skillIcon} style={{color: '#fdd835'}}><JavascriptIcon /></div>
-              <span className={styles.skillName}>JavaScript</span>
-              <div className={styles.skillBarContainer}>
-                <div className={styles.skillBar} style={{width: '40%'}}></div>
+            <div className="flex items-center gap-3.5 mb-5 last:mb-0">
+              <div className="w-[30px] h-[30px] flex items-center justify-center text-[#fdd835]"><JavascriptIcon /></div>
+              <span className="w-[140px] text-sm font-medium">JavaScript</span>
+              <div className="flex-grow h-1.5 bg-[#333] rounded-sm relative overflow-hidden">
+                <div className="absolute top-0 left-0 h-full bg-white rounded-sm w-[40%]"></div>
               </div>
-              <span className={styles.skillLevel}>Basic</span>
+              <span className="w-20 text-right text-xs text-[#a0a0a0]">Basic</span>
             </div>
           </div>
         </section>
 
         {/* About Me Card */}
-        <section className={styles.card} style={{position: 'relative', overflow: 'hidden'}}>
-          <h2 className={styles.sectionTitle}>
-            <div className={styles.titleIcon}><User size={20} /></div>
+        <section className="bg-[#1a1a1a] border border-[#2a2a2a] rounded-2xl p-[30px] shadow-[0_10px_30px_rgba(0,0,0,0.5)] relative overflow-hidden">
+          <h2 className="text-base font-semibold tracking-wide flex items-center gap-3.5 mb-6">
+            <div className="w-10 h-10 rounded-full border border-[#333] flex items-center justify-center"><User size={20} /></div>
             ABOUT ME
           </h2>
           
-          <div className={styles.aboutContent}>
-            <p className={styles.aboutText}>
+          <div className="relative">
+            <p className="text-sm leading-[1.6] text-[#ccc] m-0 relative z-10">
               I am a passionate Flutter developer with a strong interest in building beautiful and functional mobile applications. I love learning new technologies and improving my skills every day.<br /><br />
               My goal is to create impactful solutions and grow as a full-stack developer.
             </p>
-            <div className={styles.quoteIcon}>”</div>
+            <div className="absolute right-0 -bottom-5 text-[80px] text-[#222] font-serif leading-none z-0 pointer-events-none">”</div>
           </div>
         </section>
 
